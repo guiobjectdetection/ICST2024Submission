@@ -32,6 +32,8 @@ Autonomously generate a dataset of 6,000 annotated screenshots from Wikipedia pa
 - The browser's dimensions are standardized to a typical desktop viewport.
 - Wikipedia URLs are the entry points, steering the direction of the crawl.
 
+#### Dataset Download
+The dataset can be downloaded from the following [archive](https://zenodo.org/records/10041768).
 
 ### Training Object Detection Models###
 
@@ -54,15 +56,8 @@ In this example we are using the yolov8x model, the largest one. Feel free to se
 The folder training_results contains the results of the best performing model YOLOv8.
 When the training is finished, you will get a folder with the same structure.
 
-### Inference ###
+### Full Demo ###
 
-If you want to use the trained model we got, you may use the last.pt (Pytorch) model file and you may run inference on a wikipedia screenshot of your choice by running:
-```bash
-yolo task=detect \
-mode=predict \
-model=last.pt \
-conf=0.5 \
-source={images_folder}
-```
-Please remember to properly adjust paths.
+Please refer to the full demo notebook where you can download and use the model as well as an example that uses selenium as well as object detection and OCR to achieve full automated interaction with the browser only based on vision with 0 metadata.
+
 
